@@ -14,10 +14,141 @@
         font-size: 14rem;
     }
 }
-
+@mixin btn-default-big($color_br, $color_bg, $color_tx) {
+    height: 48px;
+    padding: 12px 28px;
+    border: 1.5px solid $color_br;
+    border-radius: 4px;
+    background-color: $color_bg;
+    font-size: 16rem;
+    font-weight: 600;
+    color: $color_tx;
+}
+@mixin btn-default-medium($color_br, $color_bg, $color_tx) {
+    height: 38px;
+    padding: 12px 28px;
+    border: 1.5px solid $color_br;
+    border-radius: 4px;
+    background-color: $color_bg;
+    font-size: 14rem;
+    font-weight: 600;
+    color: $color_tx;
+}
 @mixin Heading-1-700{
     font-weight: 700;
-    size: 44rem;
+    font-size: 44rem;
     line-height: 56px;
     color: $color-grey-01;
+}
+@mixin Heading-2-600{
+    font-weight: 600;
+    font-size: 36rem;
+    line-height: 45px;
+    color: $color-grey-01;
+}
+@mixin Heading-3-600{
+    font-weight: 600;
+    font-size: 32rem;
+    line-height: 40px;
+    color: $color-grey-01;
+}
+@mixin Heading-3-500{
+    font-weight: 500;
+    font-size: 32rem;
+    line-height: 40px;
+    color: $color-grey-01;
+}
+@mixin Heading-4-600{
+    font-weight: 600;
+    font-size: 28rem;
+    line-height: 35px;
+    color: $color-grey-01;
+}
+@mixin Heading-4-500{
+    font-weight: 500;
+    font-size: 28rem;
+    line-height: 35px;
+    color: $color-grey-01;
+}
+@mixin Heading-5-600{
+    font-weight: 600;
+    font-size: 24rem;
+    line-height: 30px;
+    color: $color-grey-01;
+}
+@mixin Heading-5-500{
+    font-weight: 500;
+    font-size: 24rem;
+    line-height: 30px;
+    color: $color-grey-01;
+}
+@mixin Heading-6-600{
+    font-weight: 600;
+    font-size: 20rem;
+    line-height: 25px;
+    color: $color-grey-01;
+}
+@mixin Heading-6-500{
+    font-weight: 500;
+    font-size: 20rem;
+    line-height: 25px;
+    color: $color-grey-01;
+}
+@mixin Heading-7-600{
+    font-weight: 600;
+    font-size: 16rem;
+    line-height: 20px;
+    color: $color-grey-01;
+}
+@mixin Heading-7-500{
+    font-weight: 500;
+    font-size: 16rem;
+    line-height: 20px;
+    color: $color-grey-01;
+}
+@mixin Body-1-400{
+    font-weight: 400;
+    font-size: 16rem;
+    line-height: 28px;
+    color: $color-grey-02;
+}
+@mixin Body-1-600{
+    font-weight: 600;
+    font-size: 16rem;
+    line-height: 28px;
+    color: $color-grey-02;
+}
+@mixin Body-2-400{
+    font-weight: 400;
+    font-size: 14rem;
+    line-height: 24px;
+    color: $color-grey-02;
+}
+@mixin Body-1-500{
+    font-weight: 500;
+    font-size: 14rem;
+    line-height: 24px;
+    color: $color-grey-02;
+}
+@mixin Button-big-text{
+    font-weight: 400;
+    font-size: 16rem;
+    line-height: 28px;
+    color: $color-grey-02;
+}
+@mixin Button-medium-text{
+    font-weight: 600;
+    font-size: 14rem;
+    color: $color-grey-02;
+}
+@mixin Input-placeholder{
+    font-weight: 400;
+    font-size: 16rem;
+    color: $color-grey-02;
+}
+@mixin Input-label{
+    font-weight: 500;
+    font-size: 14rem;
+    line-height: 17px;
+    color: $color-grey-02;
 }

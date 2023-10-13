@@ -13,7 +13,7 @@
         max-width: 520px;
         height: 354px;
         border-radius: 8px;
-        background-color: #ffffff;
+        background-color: $color-whiteFixed;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -24,12 +24,22 @@
             height: 24px;
             display: flex;
             justify-content: space-between;
-            border: 1px solid red;
             p{
-                font-size: 16rem;
-                line-height: 20px;
-                color: $color-grey-01;
-                font-weight: 500;
+                @include Heading-7-500;
+            }
+            .btnClose{
+                width: 24px;
+                height: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 600;
+                font-size: 20rem;
+                color: $color-grey-04;
+                cursor: pointer;
+                &:hover{
+                    color: $color-grey-02;
+                }
             }
         }
         .divImg{

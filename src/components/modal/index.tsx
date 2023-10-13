@@ -1,5 +1,5 @@
 import styles from './styles.module.scss';
-import { Lexend } from '@next/font/google';
+import { Lexend } from "next/font/google";
 
 const lexend = Lexend({
     subsets: ['latin'],
@@ -12,7 +12,7 @@ export default function Modal(){
             <div className={styles.modal}>
                 <div className={styles.description}>
                     <p className={lexend.className}>Imagem do veículo</p>
-                    <div className={styles.btnClose}>x</div>
+                    <div className={styles.btnClose}>X</div>
                 </div>
                 <div className={styles.divImg}></div>
             </div>
