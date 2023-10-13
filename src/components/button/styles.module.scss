@@ -1,0 +1,85 @@
+@use '../../scss/abstracts/' as *;
+//Os botões estão padronizados em: src/scss/abstracts/_mixin.scss 
+//aqui apenas exemplifico o seu uso.
+.container{
+    width: 80%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: $color-random-07;
+    .btnTeste1{
+        @include btn-default($color-grey-0, $color-grey-0, $color-whiteFixed);
+    }
+    .btnTeste2{
+        @include btn-default($color-grey-01, $color-grey-01, $color-whiteFixed);
+    }
+    .btnTeste3{
+        @include btn-default($color-grey-06, $color-grey-06, $color-grey-02);
+    }
+    .btnTeste4{
+        @include btn-default($color-grey-05, $color-grey-05, $color-grey-02);
+    }
+    .btnTeste5{
+        @include btn-default($color-grey-05, $color-grey-05, $color-whiteFixed);
+    }
+    .btnTeste6{
+        @include btn-default($color-brand-01, $color-brand-01, $color-whiteFixed);
+    }
+    .btnTeste7{
+        @include btn-default($color-brand-02, $color-brand-02, $color-whiteFixed);
+    }
+    .btnTeste8{
+        @include btn-default($color-brand-04, $color-brand-04, $color-brand-01);
+    }
+    .btnTeste9{
+        @include btn-default($color-grey-10, $color-grey-10, $color-grey-01);
+    }
+    .btnTeste10{
+        @include btn-default($color-grey-10, transparent, $color-grey-10);
+    }
+    .btnTeste11{
+        @include btn-default($color-grey-10, $color-grey-10, $color-grey-01);
+    }
+    .btnTeste12{
+        @include btn-default($color-grey-0, transparent, $color-grey-0);
+    }
+    .btnTeste13{
+        @include btn-default($color-grey-01, $color-grey-01, $color-whiteFixed);
+    }
+    .btnTeste14{
+        @include btn-default($color-grey-04, transparent, $color-grey-0);
+    }
+    .btnTeste15{
+        @include btn-default($color-grey-01, $color-grey-01, $color-whiteFixed);
+    }
+    .btnTeste16{
+        @include btn-default($color-brand-01, transparent, $color-brand-01);
+    }
+    .btnTeste17{
+        @include btn-default($color-brand-01, $color-brand-04, $color-brand-01);
+    }
+    .btnTeste18{
+        @include btn-default(transparent, transparent, $color-grey-0);
+    }
+    .btnTeste19{
+        @include btn-default($color-grey-08, $color-grey-08, $color-grey-0);
+    }
+    .btnTeste20{
+        @include btn-default($color-alert-03, $color-alert-03, $color-alert-01);
+    }
+    .btnTeste21{
+        @include btn-default($color-alert-02, $color-alert-02, $color-alert-01);
+    }
+    .btnTeste22{
+        @include btn-default($color-sucess-03, $color-sucess-03, $color-sucess-01);
+    }
+    .btnTeste23{
+        @include btn-default($color-sucess-02, $color-sucess-02, $color-sucess-01);
+    }
+    .btnTeste24{
+        @include btn-default($color-brand-03, $color-brand-03, $color-brand-04);
+    }
+}

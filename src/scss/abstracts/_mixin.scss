@@ -1,0 +1,23 @@
+@use './variables' as *;
+
+@mixin btn-default($color_br, $color_bg, $color_tx) {
+    height: 48px;
+    padding: 12px 28px;
+    border: 1.5px solid $color_br;
+    border-radius: 4px;
+    background-color: $color_bg;
+    font-size: 16rem;
+    font-weight: 600;
+    color: $color_tx;
+    &:hover{
+        height: 38px;
+        font-size: 14rem;
+    }
+}
+
+@mixin Heading-1-700{
+    font-weight: 700;
+    size: 44rem;
+    line-height: 56px;
+    color: $color-grey-01;
+}
