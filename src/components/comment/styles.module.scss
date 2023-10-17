@@ -1,0 +1,37 @@
+@use '../../scss/abstracts/' as *;
+.container{
+    // border: 1px solid red;
+    width: 100%;
+    max-width: 663px;
+    margin-bottom: 44px;
+    .header{
+        // border: 1px solid black;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+        .circle{
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $color-random-01;
+            color: $color-whiteFixed;
+        }
+        .name{
+            @include Body-2-500;
+            color: $color-grey-01;
+        }
+        .time{
+            font-size: 12px;
+            color: $color-grey-03;
+        }
+    }
+    .comment{
+        p{
+            @include Body-2-400;
+        }
+    }
+}

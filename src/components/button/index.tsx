@@ -2,7 +2,7 @@ import styles from './styles.module.scss';
 //Faço as minhas componentizações através dos mixins quando componentes pequenos
 //Os botões estão padronizados em: src/scss/abstracts/_mixin.scss 
 //aqui apenas exemplifico o seu uso.
-export default function btnExemplo(){
+export default function BtnExemplo(){
     return(
         <div className={styles.container}>
             <div className={styles.left}>

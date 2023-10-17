@@ -1,0 +1,87 @@
+@use '../../scss/abstracts/' as *;
+.container{
+    // border: 1px solid red;
+    width: 312px;
+    height: 350px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    &:hover{
+        .divImg{
+            border: 2px solid $color-brand-01;
+        }
+    }
+    .divImg{
+        // border: 1px solid red;
+        width: 100%;
+        height: 152px;
+        position: relative;
+        background-color: $color-grey-07;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    .divTitle{
+        // border: 1px solid black;
+        p{
+            @include Heading-7-600;
+        }
+    }
+    .divDescription{
+        // border: 1px solid violet;
+        p{
+            @include Body-2-400;
+        }
+    }
+    .divUser{
+        // border: 1px solid blue;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        .divCircle{
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+            background-color: $color-brand-02;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14rem;
+            p{
+                color: $color-whiteFixed;
+            }
+        }
+        p{
+            @include Body-2-500;
+        }
+    }
+    .divDetail{
+        // border: 1px solid  black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .divKmYear{
+            // border: 1px solid  red;
+            display: flex;
+            gap: 12px;
+            div{
+                background-color: $color-brand-04;
+                padding: 4px 8px;
+                border-radius: 4px;
+                p{
+                    @include Body-2-500; 
+                    color: $color-brand-01;
+                }
+            }
+        }
+        .divPrice{
+            p{
+                @include Heading-7-500;
+            }
+        }
+    }
+}
