@@ -1,8 +1,10 @@
 @import './reset';
 @import './typography';
+@import './abstracts/variables';
 
 body{
     width: 100%;
+    background-color: #F5F5F5;
     main{
         width: 100%;
         display: flex;

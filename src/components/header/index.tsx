@@ -6,10 +6,13 @@ import Menu from '@/img/Hamburguer.svg';
 import Xis from '@/img/xis.svg';
 import { useContext, useState } from 'react';
 import { GlobalContext } from '@/providers/GlobalContext';
+import { useRouter } from "next/navigation";
+import { destroyCookie } from "nookies";
 
 export default function Header(){
-    const { userLogin } = useContext(GlobalContext);
+    const { userLogin, user, setToken, setUser } = useContext(GlobalContext);
     const [ openMenu, setOpenMenu ] = useState(false);
+    const router = useRouter();
 
     function handleMenu(){
         if(openMenu){
@@ -19,35 +22,68 @@ export default function Header(){
         }
     }
 
+    function handleLogin(){
+        router.push('/login');
+        if(openMenu){
+            setOpenMenu(false);
+        }
+    }
+
+    function handleRegister(){
+        router.push('/register');
+        if(openMenu){
+            setOpenMenu(false);
+        }
+    }
+
+    function handleLogout(){
+        destroyCookie(null, 'motors.token');
+        setUser(null);
+        setToken(null);
+        handleMenu();
+        router.push('/');
+    }
+
+    function goBack(){
+        router.push('/');
+    }
+
+    function goAdvertiser(){
+        handleMenu();
+        if(user){
+            router.push(`/advertiser/${user.id}`);
+        }
+    }
+
     return(
         <div className={!openMenu ? styles.container : `${styles.container} ${styles.container2}`}>
             <div className={styles.maxSize}>
                 <div className={styles.logo}>
-                    <Image src={Logo} alt='Logotipo' />
+                    <Image src={Logo} alt='Logotipo' onClick={()=>goBack()}/>
                 </div>
                 <Image className={styles.hamburguer} src={!openMenu ? Menu : Xis} alt='Menu' onClick={()=>handleMenu()}/>
-                {!userLogin ? 
+                {!user ? 
                     <div className={styles.menu}>
-                        <button className={styles.btnLogin}>Fazer Login</button>
-                        <button className={styles.btnRegister}>Cadastrar</button>
+                        <button className={styles.btnLogin} onClick={()=>handleLogin()}>Fazer Login</button>
+                        <button className={styles.btnRegister} onClick={()=>handleRegister()}>Cadastrar</button>
                     </div>
                 :
                     <div className={styles.menu} onClick={()=>handleMenu()}>
-                        <div className={styles.circle}>SL</div>
-                        <p>Samuel Leão</p>
+                        <div className={styles.circle}>{(user.name[0]).toLocaleUpperCase()}</div>
+                        <p>{user.name}</p>
                     </div>
                 }
-                {openMenu && userLogin ? 
+                {openMenu && user ? 
                     <ul>
                         <li>Editar Perfil</li>
                         <li>Editar Endereço</li>
-                        <li>Meus Anúncios</li>
-                        <li onClick={()=>handleMenu()}>Sair</li>
+                        <li onClick={()=>goAdvertiser()}>Meus Anúncios</li>
+                        <li onClick={()=>handleLogout()}>Sair</li>
                     </ul>
-                : openMenu && !userLogin ? 
+                : openMenu && !user ? 
                     <div className={styles.divBtns}>
-                        <button className={styles.btnLogin}>Fazer Login</button>
-                        <button className={styles.btnRegister}>Cadastrar</button>
+                        <button className={styles.btnLogin} onClick={()=>handleLogin()}>Fazer Login</button>
+                        <button className={styles.btnRegister} onClick={()=>handleRegister()}>Cadastrar</button>
                     </div>
                 :
                 null 

@@ -2,7 +2,16 @@
     width: 100%;
     max-width: 1488px;
     display: flex;
-    flex-wrap: wrap;
+    overflow-x: auto;
     padding-top: 80px;
-    justify-content: space-evenly;
+}
+@media(min-width: 706px) {
+    .divContainer{
+        width: 100%;
+        max-width: 1488px;
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 80px;
+        justify-content: space-evenly;
+    }
 }

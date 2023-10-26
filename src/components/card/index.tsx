@@ -1,18 +1,34 @@
+'use client';
 import Image from 'next/image';
 import styles from './styles.module.scss';
 import { Lexend } from "next/font/google";
+import Link from 'next/link';
+import { GlobalContext } from '@/providers/GlobalContext';
+import { useContext, useState } from 'react';
+import { IAnnouncement } from '@/providers/interfaces';
 
 const lexend = Lexend({
     subsets: ['latin'],
     weight: ['100','200','300','400','500','600','700','800','900']
 })
 
+interface IUserAnnouncement{
+    id: string;
+    email: string;
+    name: string;
+    cpf: string;
+    phone: string;
+    birth: string;
+    description: string;
+    password: string;
+    type: string;
+}
 interface ImgAnnouncement{
     id: string;
 	url: string;
     announcement_id: string;
 }
-interface IAnnouncements{
+export interface IAnnouncements{
     id: string;
 	mark: string;
 	model: string;
@@ -23,7 +39,7 @@ interface IAnnouncements{
 	price: number;
 	fipe: number;
 	description: string;
-	user_id: string;
+	user: IUserAnnouncement;
 	image: ImgAnnouncement[];
 }
 interface IProps{
@@ -31,16 +47,26 @@ interface IProps{
 }
 
 export default function Card({announcement}:IProps){
+    const { user, advertiser, setModal, setUpdateAnnouncement } = useContext(GlobalContext);
+
+    function handleUpdate() {
+        console.log(announcement);
+        setUpdateAnnouncement(announcement.mark);
+        setModal(true);
+    };
+
     return(
         <div className={styles.container}>
-            <div className={styles.divImg}>
-                <Image 
-                    src={`${announcement.image[0].url}`}
-                    alt={`${announcement.model}`}  
-                    height={500} 
-                    width={500}    
-                />
-            </div>
+            <Link className={styles.divImg} href={`/product/${announcement.id}`}>
+                {(announcement.image).length>0 ?
+                    <Image 
+                        src={`${announcement.image[0].url}`}
+                        alt={`${announcement.model}`}  
+                        height={500} 
+                        width={500}    
+                    />
+                : null}
+            </Link>
             <div className={styles.divTitle}>
                 <p className={lexend.className}>{announcement.mark} - {announcement.model}</p>
             </div>
@@ -56,9 +82,9 @@ export default function Card({announcement}:IProps){
             </div>
             <div className={styles.divUser}>
                 <div className={styles.divCircle}>
-                    <p>R</p>
+                    <p>{(announcement.user.name[0]).toUpperCase()}</p>
                 </div>
-                <p>Anunciante</p>
+                <p>{announcement.user.name}</p>
             </div>
             <div className={styles.divDetail}>
                 <div className={styles.divKmYear}>
@@ -75,6 +101,12 @@ export default function Card({announcement}:IProps){
                     </p>
                 </div>
             </div>
+            {user?.id==announcement.user.id&&advertiser!=null ? 
+                <div className={styles.owner}>
+                    <button onClick={()=>handleUpdate()}>Editar</button>
+                    <button>Ver detalhes</button>
+                </div>
+            :null}
         </div> 
     )
 }
