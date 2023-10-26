@@ -1,0 +1,99 @@
+@use '../../scss/abstracts/' as *;
+
+.container{
+    padding-top: 126px;
+    padding-bottom: 97px;
+    display: flex;
+    justify-content: center;
+    form{
+        width: 100%;
+        max-width: 411px;
+        border-radius: 4px;
+        background-color: $color-whiteFixed;
+        padding: 44px 20px;
+        display: flex;
+        flex-direction: column;
+        .pRegister{
+            @include Heading-5-500;
+            margin-bottom: 32px;
+        }
+        .pInfo{
+            @include Body-2-500;
+            margin-bottom: 24px;
+        }
+        .lblRegister{
+            @include Input-label;
+            margin-bottom: 8px;
+        }
+        .inpRegister{
+            height: 48px;
+            padding: 0 16px;
+            margin-bottom: 24px;
+            border: 1 solid $color-grey-07;
+        }
+        .inpDescription{
+            height: 80px;
+            padding: 16px;
+            margin-bottom: 24px;
+            border: 1 solid $color-grey-07;
+        }
+        .divGroup{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            // border: 1px solid black;
+            .divSide{
+                width: 100%;
+                max-width: 152px;
+                // border: 1px solid red;
+                .lblRegister{
+                    @include Input-label;
+                }
+                .inpRegister{
+                    width: 100%;
+                    max-width: 152px;
+                    height: 48px;
+                    padding: 0 0 0 16px;
+                    border: 1 solid $color-grey-07;
+                    margin-top: 8px;
+                }
+            }
+            .onButton{
+                width: 100%;
+                max-width: 152px;
+                height: 48px;
+                background-color: $color-brand-01;
+                color: $color-whiteFixed;
+                border: 1px solid $color-brand-01;
+                border-radius: 4px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                margin-bottom: 28px;
+            }
+            .offButton{
+                width: 100%;
+                max-width: 152px;
+                height: 48px;
+                background-color: $color-whiteFixed;
+                color: $color-grey-0;
+                border: 1px solid $color-grey-04;
+                border-radius: 4px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                margin-bottom: 28px;
+            }
+        }
+        button{
+            @include btn-default-big($color-brand-01, $color-brand-01, $color-whiteFixed)
+        }
+    }
+}
+@media(min-width: 400px) {
+    .container form{
+        padding: 44px 48px;
+    }
+}
