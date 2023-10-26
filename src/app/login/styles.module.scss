@@ -1,0 +1,39 @@
+@use '../../scss/abstracts/' as *;
+
+.container{
+    padding-top: 100px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    form{
+        width: 95vw;
+        max-width: 412px;
+        border-radius: 4px;
+        background-color: $color-whiteFixed;
+        padding: 44px 48px;
+        display: flex;
+        flex-direction: column;
+        .pLogin{
+            @include Heading-5-500;
+            margin-bottom: 32px;
+        }
+        .lblLogin{
+            @include Input-label;
+            margin-bottom: 8px;
+        }
+        .inpLogin{
+            height: 48px;
+            padding: 0 16px;
+            margin-bottom: 24px;
+            border: 1 solid $color-grey-07;
+        }
+        .forgotPassword{
+            @include Body-2-500;
+            align-self: flex-end;
+            margin: -15px 0 21px 0;
+        }
+        .btnLogin{
+            @include btn-default-big($color-brand-01, $color-brand-01, $color-whiteFixed);
+        }
+    }
+}
