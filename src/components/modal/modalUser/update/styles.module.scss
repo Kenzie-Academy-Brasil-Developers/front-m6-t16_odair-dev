@@ -1,0 +1,192 @@
+@use '../../../../scss/abstracts/' as *;
+
+@keyframes animationModal{
+    0%{transform: translateY(-500px);}
+    100%{transform: translateY(0);}
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.container2{
+    display: none;
+}
+
+.container{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 80px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 3;
+    overflow-y: auto;
+    .modal{
+        width: 95%;
+        max-width: 520px;
+        height: fit-content;
+        border-radius: 8px;
+        background-color: $color-whiteFixed;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 8px;
+        animation: animationModal .4s;
+        .description{
+            width: 100%;
+            height: 24px;
+            display: flex;
+            justify-content: space-between;
+            p{
+                @include Heading-7-500;
+            }
+            .btnClose{
+                width: 24px;
+                height: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 600;
+                font-size: 20rem;
+                color: $color-grey-04;
+                cursor: pointer;
+                &:hover{
+                    color: $color-grey-02;
+                }
+            }
+        }
+        form{
+            width: 100%;
+            border-radius: 4px;
+            background-color: $color-whiteFixed;
+            display: flex;
+            flex-direction: column;
+            .pInfo{
+                @include Body-2-500;
+                margin-bottom: 24px;
+            }
+            .lblRegister{
+                @include Input-label;
+                margin-bottom: 8px;
+            }
+            .inpRegister{
+                height: 48px;
+                padding: 0 16px;
+                margin-bottom: 24px;
+                border: 1 solid $color-grey-07;
+            }
+            .inpDescription{
+                height: 80px;
+                padding: 16px;
+                margin-bottom: 24px;
+                border: 1 solid $color-grey-07;
+            }
+            .divGroup{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                .divSide{
+                    width: 100%;
+                    max-width: 226px;
+                    .lblRegister{
+                        @include Input-label;
+                    }
+                    .inpRegister{
+                        width: 100%;
+                        max-width: 226px;
+                        height: 48px;
+                        padding: 0 0 0 16px;
+                        border: 1 solid $color-grey-07;
+                        margin-top: 8px;
+                    }
+                }
+            }
+            .divMoreImages{
+                width: 100%;
+                height: fit-content;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+            }
+            .btnMoreImages{
+                padding: 12px 20px;
+                background-color: $color-brand-04;
+                color: $color-brand-01;
+                border: 1px solid $color-brand-04;
+                border-radius: 4px;
+                cursor: pointer;
+                margin-bottom: 42px;
+                width: fit-content;
+                font-size: 14rem;
+                font-weight: 600;
+            }
+            .divBtns{
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 8px;
+                button{
+                    @include btn-default-big($color-brand-01, $color-brand-01, $color-whiteFixed);
+                    font-size: 14rem;
+                    font-weight: 500;
+                    max-width: 145px;
+                }
+                .btnDelete{
+                    width: 100%;
+                    max-width: 145px;
+                    height: 48px;
+                    border-radius: 4px;
+                    border: 1px solid $color-alert-02;
+                    background-color: $color-alert-02;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: $color-alert-01;
+                    font-size: 14rem;
+                    font-weight: 500;
+                    cursor: pointer;
+                }
+                .btnCancel{
+                    width: 100%;
+                    max-width: 145px;
+                    height: 48px;
+                    border-radius: 4px;
+                    border: 1px solid $color-grey-06;
+                    background-color: $color-grey-06;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: $color-grey-02;
+                    font-size: 14rem;
+                    font-weight: 500;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+@media(min-width: 720px) {
+    .container .modal{
+        gap: 32px;
+        padding: 20px;
+        form{
+            .divBtns{
+                justify-content: space-between;
+                button{
+                    @include btn-default-big($color-brand-01, $color-brand-01, $color-whiteFixed);
+                    font-size: 15rem;
+                    padding: 0 8px;
+                }
+                .btnDelete{
+                    font-size: 15rem;
+                    font-weight: 600;
+                    margin: 0 8px;
+                }
+                .btnCancel{
+                    font-size: 15rem;
+                    font-weight: 600;
+                }
+            }
+        }
+    }   
+}

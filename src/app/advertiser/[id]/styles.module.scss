@@ -48,7 +48,6 @@
                 gap: 8px;
                 .pName{
                     @include Heading-6-600;
-                    // border: 1px solid red;
                 }
                 .divAdvertiser{
                     padding: 4px 8px;
@@ -61,7 +60,6 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    // border: 1px solid red;
                 }
             }
             .divDescription{

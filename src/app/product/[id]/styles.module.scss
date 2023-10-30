@@ -1,4 +1,5 @@
 @use '../../../scss/abstracts/' as *;
+
 .container{
     display: flex;
     flex-direction: column;
@@ -13,7 +14,6 @@
     .maxSize{
         width: 100%;
         max-width: 1238px;
-        // margin-top: 120px;
         display: flex;
         justify-content: center;
         .left{
@@ -50,10 +50,11 @@
                     margin-top: 41px;
                     display: flex;
                     justify-content: space-between;
-                    align-items: center;
+                    flex-wrap: wrap;
                     .divKmYear{
                         display: flex;
                         gap: 12px;
+                        margin-bottom: 30px;
                         div{
                             background-color: $color-brand-04;
                             padding: 4px 8px;
@@ -65,10 +66,15 @@
                         }
                     }
                     .divPrice{
+                        height: fit-content;
+                        margin-bottom: 30px;
                         p{
                             @include Heading-7-500;
                         }
                     }
+                }
+                .btnBuy{
+                    @include btn-default-medium($color-brand-01, $color-brand-01, $color-whiteFixed);
                 }
             }
             .carDescription{
@@ -83,6 +89,77 @@
                 }
                 .description{
                     @include Body-1-400;
+                    margin-top: 32px;
+                }
+            }
+            .divImgRight{
+                width: 100%;
+                min-height: 355px;
+                background-color: $color-grey-10;
+                border-radius: 4px;
+                margin-bottom: 34px;
+                padding: 36px 44px;
+                box-shadow: 0px 4px 20px -10px $color-grey-0;
+                p{
+                    @include Heading-6-600;
+                }
+                .allImages{
+                    margin-top: 32px;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    .miniCard{
+                        width: 108px;
+                        height: 108px;
+                        background-color: $color-grey-07;
+                        border-radius: 4px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        margin-bottom: 32px;
+                        img{
+                            width: 95%;
+                            height: 95%;
+                            object-fit: contain;
+                        }
+                    }
+                }
+            }
+            .owner{
+                width: 100%;
+                background-color: $color-grey-10;
+                border-radius: 4px;  
+                margin-top: 34px;
+                margin-bottom: 18px;
+                padding: 36px 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                box-shadow: 0px 4px 20px -10px $color-grey-0;
+                .circle{
+                    width: 104px;
+                    height: 104px;
+                    border-radius: 52px;
+                    background-color: $color-brand-01;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 36rem;
+                    font-weight: 600;
+                    color: $color-whiteFixed;
+                }
+                .name{
+                    @include Heading-6-600;
+                    margin-top: 28px;
+                }
+                .description{
+                    @include Body-1-400;
+                    margin: 32px 44px;
+                    text-align: center
+                }
+                .btnHome{
+                    @include btn-default-big($color-grey-0, $color-grey-0, $color-whiteFixed);
                     margin-top: 32px;
                 }
             }
@@ -139,7 +216,6 @@
                 border-radius: 4px;
                 position: relative;
                 box-shadow: 0px 4px 20px -10px $color-grey-0;
-                // border: 1px solid red;
                 .headerComment{
                     display: flex;
                     gap: 8px;
@@ -184,7 +260,6 @@
                     top: 140px;
                 }
                 .commentDefault{
-                    // width: fit-content;
                     margin: 15px 8px 0 0;
                     height: 24px;
                     padding: 0 12px;
@@ -278,6 +353,14 @@
 @media(min-width: 1215px) {
     .container .maxSize{
         justify-content: space-between;
+        .left{
+            .divImgRight{
+                display: none;
+            }
+            .owner{
+                display: none;
+            }
+        }
         .right{
             display: block;
         }

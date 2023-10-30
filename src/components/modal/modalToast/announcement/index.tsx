@@ -3,37 +3,36 @@ import { useContext } from "react";
 import { GlobalContext } from "@/providers/GlobalContext";
 import styles from "./styles.module.scss";
 import { Lexend } from "next/font/google";
-import Image from "next/image";
 
 const lexend = Lexend({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-export default function Modal() {
-  const { modal, setModal, titleModal, imgModal, setImgModal } =
+export default function ModalToastNewAnnouncement() {
+  const { modalToastNewAnnouncement, setModalToastNewAnnouncement } =
     useContext(GlobalContext);
 
   function handleClose() {
-    setImgModal(null);
-    setModal(false);
+    setModalToastNewAnnouncement(false);
   }
 
-  if (modal) {
+  if (modalToastNewAnnouncement) {
     return (
       <div className={styles.container}>
         <div className={styles.modal}>
           <div className={styles.description}>
-            <p className={lexend.className}>{titleModal}</p>
+            <p className={lexend.className}>Sucesso!</p>
             <div className={styles.btnClose} onClick={() => handleClose()}>
               X
             </div>
           </div>
-          {imgModal ? (
-            <div className={styles.divImg}>
-              <Image alt="Teste" height={500} width={500} src={`${imgModal}`} />
-            </div>
-          ) : null}
+          <p className={`${lexend.className} ${styles.pTitle}`}>
+            Seu anúncio foi criado com sucesso!
+          </p>
+          <p className={`${lexend.className} ${styles.pText}`}>
+            Agora você poderá ver seus negócios crescendo em grande escala
+          </p>
         </div>
       </div>
     );

@@ -6,7 +6,7 @@ export default function Container({
     children: React.ReactNode
   }){
     return(
-        <div className={styles.divContainer} id='topHome'>
+        <div className={styles.divContainer}>
             {children}
         </div>
     )

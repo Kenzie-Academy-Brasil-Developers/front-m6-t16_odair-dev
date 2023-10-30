@@ -1,8 +1,8 @@
-@use '../../scss/abstracts/' as *;
+@use '../../../../scss/abstracts/' as *;
 
 @keyframes animationModal{
-    0%{transform: translateY(-500px);}
-    100%{transform: translateY(0);}
+    0%{transform: translateX(-500px);}
+    100%{transform: translateX(0);}
     from { opacity: 0; }
     to   { opacity: 1; }
 }
@@ -19,13 +19,11 @@
     .modal{
         width: 100%;
         max-width: 520px;
-        height: 354px;
-        max-height: 354px;
+        height: fit-content;
         border-radius: 8px;
         background-color: $color-whiteFixed;
         display: flex;
         flex-direction: column;
-        align-items: center;
         gap: 16px;
         padding: 16px;
         animation: animationModal .4s;
@@ -52,20 +50,11 @@
                 }
             }
         }
-        .divImg{
-            width: 100%;
-            height: 100%;
-            border-radius: 4px;
-            background-color: $color-grey-07;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            img{
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-            }
+        .pTitle{
+            @include Heading-7-500;
+        }
+        .pText{
+            @include Body-1-400;
         }
     }
 }

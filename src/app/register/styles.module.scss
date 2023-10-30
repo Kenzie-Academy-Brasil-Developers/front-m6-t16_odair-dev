@@ -30,22 +30,41 @@
             padding: 0 16px;
             margin-bottom: 24px;
             border: 1 solid $color-grey-07;
+            &:hover{
+                background-color: $color-grey-08;
+            }
+            &:focus{
+                border: 1.5px solid $color-brand-02;
+                background-color: $color-grey-10;
+            }
+        }
+        .redText{
+            font-size: 12rem;
+            font-weight: 500;
+            color: $color-alert-01;
+            margin-top: -23px;
+            margin-bottom: 14px;
         }
         .inpDescription{
             height: 80px;
             padding: 16px;
             margin-bottom: 24px;
             border: 1 solid $color-grey-07;
+            &:hover{
+                background-color: $color-grey-08;
+            }
+            &:focus{
+                border: 1.5px solid $color-brand-02;
+                background-color: $color-grey-10;
+            }
         }
         .divGroup{
             width: 100%;
             display: flex;
             justify-content: space-between;
-            // border: 1px solid black;
             .divSide{
                 width: 100%;
                 max-width: 152px;
-                // border: 1px solid red;
                 .lblRegister{
                     @include Input-label;
                 }

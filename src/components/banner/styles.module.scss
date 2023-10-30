@@ -1,11 +1,10 @@
 @use '../../scss/abstracts/' as *;
+
 .container{
     margin-top: 80px;
     width: 100%;
     height: 544px;
-    // border: 1px solid red;
     position: relative; 
-    // background: linear-gradient(0deg, rgba(50,50,50,0.8) 0%, rgba(200,200,200,0.1) 100%);
     img{
         width: 95%;
         height: 95%;
@@ -19,7 +18,6 @@
         top: 0;
         display: flex;
         flex-direction: column;
-        // justify-content: center;
         align-items: center;
         padding: 0 8px;
         .pTitle{
