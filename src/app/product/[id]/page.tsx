@@ -36,6 +36,7 @@ export default function DetailProduct({ params }: IParams) {
     setImgModal,
     setTitleModal,
     user,
+    deleteCommentProduct,
   } = useContext(GlobalContext);
   const router = useRouter();
   const {
@@ -66,6 +67,10 @@ export default function DetailProduct({ params }: IParams) {
     if (announcement) {
       router.push(`/advertiser/${announcement.user.id}`);
     }
+  }
+
+  function deleteComment(id: string) {
+    deleteCommentProduct(id);
   }
 
   if (announcement) {
@@ -183,6 +188,17 @@ export default function DetailProduct({ params }: IParams) {
                             )} horas`
                       }`}
                     </p>
+                    {user != null ? (
+                      i.user_id == user.id ||
+                      user.id == announcement.user.id ? (
+                        <p
+                          className={styles.pDelete}
+                          onClick={() => deleteComment(`${i.id}`)}
+                        >
+                          Excluir
+                        </p>
+                      ) : null
+                    ) : null}
                   </div>
                   <p className={styles.textComment}>{i.comment}</p>
                 </div>

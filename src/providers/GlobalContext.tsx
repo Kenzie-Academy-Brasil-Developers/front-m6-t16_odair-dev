@@ -79,6 +79,7 @@ interface IGlobalContext {
   modalToastNewAnnouncement: boolean;
   setModalToastNewAnnouncement: React.Dispatch<React.SetStateAction<boolean>>;
   logoutUser: () => boolean;
+  deleteCommentProduct: (id: string) => Promise<void>;
 }
 
 export const GlobalContext = createContext({} as IGlobalContext);
@@ -384,6 +385,17 @@ export function GlobalProvider({ children }: IGlobalProviderProps) {
     }
   }
 
+  async function deleteCommentProduct(id: string) {
+    const { "motors.token": recoveredToken } = parseCookies();
+    api.defaults.headers.common.Authorization = `Bearer ${recoveredToken}`;
+    try {
+      const response = await api.delete(`/comments/${id}`);
+      getAnnouncement(announcement!.id);
+    } catch (error) {
+      console.log("Algo deu errado: \n", error);
+    }
+  }
+
   async function registerComment(data: any) {
     const { "motors.token": recoveredToken } = parseCookies();
     api.defaults.headers.common.Authorization = `Bearer ${recoveredToken}`;
@@ -449,6 +461,7 @@ export function GlobalProvider({ children }: IGlobalProviderProps) {
         modalToastNewAnnouncement,
         setModalToastNewAnnouncement,
         logoutUser,
+        deleteCommentProduct,
       }}
     >
       {children}

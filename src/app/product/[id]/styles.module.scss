@@ -200,6 +200,15 @@
                             color: $color-grey-03;
                             margin: 0;
                         }
+                        .pDelete{
+                            font-size: 12rem;
+                            color: $color-brand-01;
+                            margin: 0 10px;
+                            cursor: pointer;
+                            &:hover{
+                                color: $color-alert-01;
+                            }
+                        }
                     }
                     .textComment{
                         @include Body-2-400;
